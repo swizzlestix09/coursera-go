@@ -15,10 +15,10 @@ func truncate(num float64) int {
 }
 
 func main() {
-	var userInput int
+	var userInput float64
 	fmt.Println("Give me a decimal number. I'm going to round it for you. ")
 	fmt.Scan(&userInput)
 
-	fmt.Println((float64(userInput)))
+	fmt.Println(truncate(userInput))
 	return
 }
