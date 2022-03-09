@@ -6,6 +6,17 @@ Write a program which prompts the user to enter a string. The program searches t
 Examples: The program should print “Found!” for the following example entered strings, “ian”, “Ian”, “iuiygaygn”, “I d skd a efju N”. The program should print “Not Found!” for the following strings, “ihhhhhn”, “ina”, “xian”.
 
 */
-func main() {
 
+//string has to start with letter i
+// end with the letter n
+//somewhere in between has to be an a
+
+import "fmt"
+
+func ianVerfification(name string) bool {
+
+}
+
+func main() {
+	fmt.Println("Give me a piece of your soul...JK. A word will do: ")
 }
