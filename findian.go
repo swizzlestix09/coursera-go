@@ -11,31 +11,31 @@ Examples: The program should print “Found!” for the following example entere
 // end with the letter n
 //somewhere in between has to be an a
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func ianVerfification(name string) string {
 	var icheck string = "i"
-	var Icheck string = "I"
 	var ncheck string = "n"
-	var Ncheck string = "N"
-
 	var acheck string = "a"
-	var Acheck string = "A"
-	var firstLet string = string(name[0])
-	var lastLet string = string(name[len(name)-1])
+
+	var firstLet string = strings.ToLower(string(name[0]))
+	var lastLet string = strings.ToLower(string(name[len(name)-1]))
 
 	var fd string = "Found!"
 	var notFd string = "Not Found!"
 
-	if firstLet != icheck && firstLet != Icheck {
+	if firstLet != icheck {
 		return notFd
 	}
-	if lastLet != ncheck && lastLet != Ncheck {
+	if lastLet != ncheck {
 		return notFd
 	}
 
 	for i := 1; i < len(name)-2; i++ {
-		if string(name[i]) == acheck || string(name[i]) == Acheck {
+		if strings.ToLower(string(name[i])) == acheck {
 			return fd
 		}
 	}
