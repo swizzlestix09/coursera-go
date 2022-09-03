@@ -15,7 +15,7 @@ import (
 )
 
 //make function that takes array and number and sorts.
-func organizeNums() {
+func organizeNums(array []int, num int) {
 	//sort
 }
 
@@ -27,12 +27,12 @@ func main() {
 	for i := 0; i < 2; i++ {
 		fmt.Println("number please..")
 		fmt.Scan(&userInput)
-		fmt.Println(inputInts, userInput)
+		organizeNums(inputInts, userInput)
 	}
 
 	//prompt user to enter intergers
 	//store intergers in sorted slice
 
-	fmt.Println("Done picking numbers. Here they are, sorted by the computer because you're a lazy homosapien: ", inputInts)
+	fmt.Println("Done picking numbers. Here they are, sorted by my code because you're a lazy homosapien: ", inputInts)
 	//if user types X quit program
 }
