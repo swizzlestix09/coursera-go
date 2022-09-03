@@ -9,18 +9,30 @@
 // Submit your source code for the program,
 // “slice.go”.
 package main
+
 import (
 	"fmt"
-	"strings"
 )
+
+//make function that takes array and number and sorts.
+func organizeNums() {
+	//sort
+}
 
 func main() {
 	//declare a empty  slice that is size 3.
-	var inputInts := make([]int, 3)
-  fmt.Println("number please..")
+	var userInput int
+	inputInts := make([]int, 3)
+
+	for i := 0; i < 2; i++ {
+		fmt.Println("number please..")
+		fmt.Scan(&userInput)
+		fmt.Println(inputInts, userInput)
+	}
+
 	//prompt user to enter intergers
 	//store intergers in sorted slice
 
-	fmt.Println("Done picking numbers. Here they are, sorted by the computer because you're a lazy homosapien: ")
+	fmt.Println("Done picking numbers. Here they are, sorted by the computer because you're a lazy homosapien: ", inputInts)
 	//if user types X quit program
 }
