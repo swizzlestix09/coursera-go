@@ -6,33 +6,43 @@
 // The slice must grow in size to accommodate any number of integers which the user decides to enter.
 // The program should only quit (exiting the loop) when the user enters the character ‘X’ instead of an integer.
 
-// Submit your source code for the program,
-// “slice.go”.
 package main
 
 import (
 	"fmt"
+	"sort"
+	"strconv"
 )
 
-//make function that takes array and number and sorts.
-func organizeNums(array []int, num int) {
-	//sort
+//make function that takes array and sorts.
+func organizeNums(array []int) []int {
+	sort.Ints(array)
+	fmt.Println(array)
+	return array
 }
 
 func main() {
-	//declare a empty  slice that is size 3.
-	var userInput int
+	var userInput string
 	inputInts := make([]int, 3)
 
-	for i := 0; i < 2; i++ {
+	for userInput != "X" || userInput != "x" {
+
 		fmt.Println("number please..")
 		fmt.Scan(&userInput)
-		organizeNums(inputInts, userInput)
+		num, err := strconv.Atoi(userInput)
+		if err != nil {
+			//there is no notes on how to handle non "X" letters.
+			//Since previously they were being made to 0 before strconv, I kept it that way.
+			if userInput == "X" || userInput == "x" {
+				fmt.Println("Oh, good. Maybe you'll get off your phone and do it yourself.")
+				return
+			}
+			inputInts = append(inputInts, 0)
+		}
+
+		inputInts = append(inputInts, num)
+		inputInts = organizeNums(inputInts)
 	}
 
-	//prompt user to enter intergers
-	//store intergers in sorted slice
-
 	fmt.Println("Done picking numbers. Here they are, sorted by my code because you're a lazy homosapien: ", inputInts)
-	//if user types X quit program
 }
