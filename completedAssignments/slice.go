@@ -27,7 +27,7 @@ func main() {
 
 	for userInput != "X" || userInput != "x" {
 
-		fmt.Println("number please..")
+		fmt.Println("number please..")g
 		fmt.Scan(&userInput)
 		num, err := strconv.Atoi(userInput)
 		if err != nil {
