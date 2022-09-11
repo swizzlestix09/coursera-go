@@ -39,7 +39,7 @@ func main() {
 			lName: "rodriguez",
 		},
 	}
-	fmt.Println("Name of file please..")
+	fmt.Println("Name of file please, including type i.e text.doc...")
 	fmt.Scan(&nameOfFile)
 
 	//read ea line
