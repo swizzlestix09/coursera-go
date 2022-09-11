@@ -13,24 +13,10 @@ import (
 )
 
 func createMap(userName string, userAddress string) map[string]string {
-
 	userInfo := make(map[string]string)
 	userInfo["name"] = userName
 	userInfo["address"] = userAddress
 	return userInfo
-}
-
-func createObj(userInfo map[string]string) map[string]string {
-	barr, err := json.Marshal(userInfo)
-	if err != nil {
-		fmt.Println(err)
-	}
-	var userJson map[string]string
-	er := json.Unmarshal(barr, &userJson)
-	if er != nil {
-		fmt.Println(err)
-	}
-	return userJson
 }
 
 func main() {
@@ -44,8 +30,13 @@ func main() {
 	address := scanner.Text()
 
 	var userInfo = createMap(name, address)
-	var userJson = createObj(userInfo)
 
-	fmt.Println(userJson)
+	barr, err := json.Marshal(userInfo)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(string(barr))
 	return
+
 }
